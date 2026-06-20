@@ -290,116 +290,146 @@
         <button class="filter-tab" data-filter="migrations">Migration & Support</button>
       </div>
 
-      <div class="competencies-grid" id="competencies-grid">
-        
-        <!-- Platforms -->
-        <div class="competency-card glass-card reveal delay-1" data-category="platforms">
-          <div class="competency-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
-            </svg>
+      <div class="competencies-layout reveal">
+        <!-- Left Column: Tech Axis Timeline -->
+        <div class="tech-axis-container">
+          <div class="tech-axis-line">
+            <div class="tech-axis-line-pulse"></div>
           </div>
-          <h3 class="competency-title">Cloud Platforms</h3>
-          <p class="text-secondary">Architecting scalable, resilient, and multi-tenant structures in hybrid environments.</p>
-          <div class="competency-tags">
-            <span class="competency-tag">AWS (Lambda, EC2, S3)</span>
-            <span class="competency-tag">Azure (AVD, SQL, Apps)</span>
-            <span class="competency-tag">Nutanix AHV</span>
-            <span class="competency-tag">Hybrid identity</span>
+          
+          <div class="tech-axis-node" data-skill="linux">
+            <div class="tech-axis-dot"></div>
+            <div class="tech-axis-label">Linux</div>
           </div>
-        </div>
-
-        <!-- Security -->
-        <div class="competency-card glass-card reveal delay-2 scanner-effect" data-category="security">
-          <div class="competency-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
-              <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
-            </svg>
+          
+          <div class="tech-axis-node" data-skill="terraform">
+            <div class="tech-axis-dot"></div>
+            <div class="tech-axis-label">Terraform</div>
           </div>
-          <h3 class="competency-title">Cloud Security & Governance</h3>
-          <p class="text-secondary">Implementing automated audit mechanisms and designing Zero Trust architectures.</p>
-          <div class="competency-tags">
-            <span class="competency-tag">Zero Trust API</span>
-            <span class="competency-tag">IAM Policy Least Privilege</span>
-            <span class="competency-tag">Container Security</span>
-            <span class="competency-tag">CIS Benchmarking</span>
+          
+          <div class="tech-axis-node" data-skill="aws">
+            <div class="tech-axis-dot"></div>
+            <div class="tech-axis-label">AWS</div>
+          </div>
+          
+          <div class="tech-axis-node" data-skill="ms365">
+            <div class="tech-axis-dot"></div>
+            <div class="tech-axis-label">MS 365</div>
           </div>
         </div>
 
-        <!-- IaC & Automation -->
-        <div class="competency-card glass-card reveal delay-3" data-category="iac">
-          <div class="competency-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="16 18 22 12 16 6"></polyline>
-              <polyline points="8 6 2 12 8 18"></polyline>
-            </svg>
+        <!-- Right Column: Competencies Grid -->
+        <div class="competencies-grid" id="competencies-grid">
+          
+          <!-- Platforms -->
+          <div class="competency-card glass-card reveal delay-1" data-category="platforms" data-skills="aws,ms365">
+            <div class="competency-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+              </svg>
+            </div>
+            <h3 class="competency-title">Cloud Platforms</h3>
+            <p class="text-secondary">Architecting scalable, resilient, and multi-tenant structures in hybrid environments.</p>
+            <div class="competency-tags">
+              <span class="competency-tag">AWS (Lambda, EC2, S3)</span>
+              <span class="competency-tag">Azure (AVD, SQL, Apps)</span>
+              <span class="competency-tag">MS 365 (Entra ID)</span>
+              <span class="competency-tag">Nutanix AHV</span>
+            </div>
           </div>
-          <h3 class="competency-title">Infrastructure as Code</h3>
-          <p class="text-secondary">Automating secure environments via modular infrastructure definitions and validation templates.</p>
-          <div class="competency-tags">
-            <span class="competency-tag">Terraform (HCL)</span>
-            <span class="competency-tag">State Management</span>
-            <span class="competency-tag">GitHub Actions</span>
-            <span class="competency-tag">CI/CD Pipelines</span>
-          </div>
-        </div>
 
-        <!-- Automation & Scripting -->
-        <div class="competency-card glass-card reveal delay-1" data-category="iac">
-          <div class="competency-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="3"></circle>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-            </svg>
+          <!-- Security -->
+          <div class="competency-card glass-card reveal delay-2 scanner-effect" data-category="security" data-skills="aws">
+            <div class="competency-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 class="competency-title">Cloud Security & Governance</h3>
+            <p class="text-secondary">Implementing automated audit mechanisms and designing Zero Trust architectures.</p>
+            <div class="competency-tags">
+              <span class="competency-tag">Zero Trust API</span>
+              <span class="competency-tag">IAM Policy Least Privilege</span>
+              <span class="competency-tag">Container Security</span>
+              <span class="competency-tag">CIS Benchmarking</span>
+            </div>
           </div>
-          <h3 class="competency-title">Monitoring & Scripting</h3>
-          <p class="text-secondary">Creating robust automation layers and alerts using scripting languages.</p>
-          <div class="competency-tags">
-            <span class="competency-tag">PowerShell (Advanced)</span>
-            <span class="competency-tag">Python (Boto3 / Scripts)</span>
-            <span class="competency-tag">AWS Lambda Auditing</span>
-            <span class="competency-tag">EventBridge Scheduler</span>
-          </div>
-        </div>
 
-        <!-- Migrations -->
-        <div class="competency-card glass-card reveal delay-2" data-category="migrations">
-          <div class="competency-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
-              <circle cx="9" cy="7" r="4"></circle>
-              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
-              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
+          <!-- IaC & Automation -->
+          <div class="competency-card glass-card reveal delay-3" data-category="iac" data-skills="terraform">
+            <div class="competency-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="16 18 22 12 16 6"></polyline>
+                <polyline points="8 6 2 12 8 18"></polyline>
+              </svg>
+            </div>
+            <h3 class="competency-title">Infrastructure as Code</h3>
+            <p class="text-secondary">Automating secure environments via modular infrastructure definitions and validation templates.</p>
+            <div class="competency-tags">
+              <span class="competency-tag">Terraform (HCL)</span>
+              <span class="competency-tag">State Management</span>
+              <span class="competency-tag">GitHub Actions</span>
+              <span class="competency-tag">CI/CD Pipelines</span>
+            </div>
           </div>
-          <h3 class="competency-title">Discovery & Migration</h3>
-          <p class="text-secondary">Leading transition assessments, mapping workload configurations and dependencies.</p>
-          <div class="competency-tags">
-            <span class="competency-tag">Azure Migrate / ASR</span>
-            <span class="competency-tag">AWS MGN</span>
-            <span class="competency-tag">Cloudscape Asset Mapping</span>
-            <span class="competency-tag">Transition Governance</span>
-          </div>
-        </div>
 
-        <!-- Support -->
-        <div class="competency-card glass-card reveal delay-3" data-category="migrations">
-          <div class="competency-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-            </svg>
+          <!-- Automation & Scripting -->
+          <div class="competency-card glass-card reveal delay-1" data-category="iac" data-skills="linux,aws">
+            <div class="competency-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="3"></circle>
+                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              </svg>
+            </div>
+            <h3 class="competency-title">Monitoring & Scripting</h3>
+            <p class="text-secondary">Creating robust automation layers and alerts using scripting languages.</p>
+            <div class="competency-tags">
+              <span class="competency-tag">Linux (RHEL/Ubuntu)</span>
+              <span class="competency-tag">PowerShell (Advanced)</span>
+              <span class="competency-tag">Python (Boto3 / Scripts)</span>
+              <span class="competency-tag">AWS Lambda Auditing</span>
+            </div>
           </div>
-          <h3 class="competency-title">Support & Change Mgmt</h3>
-          <p class="text-secondary">Maintaining high availability structures and compliant transition controls.</p>
-          <div class="competency-tags">
-            <span class="competency-tag">L2/L3 Windows Support</span>
-            <span class="competency-tag">ServiceNow Compliance</span>
-            <span class="competency-tag">Power BI Dashboarding</span>
-            <span class="competency-tag">SLA Governance</span>
-          </div>
-        </div>
 
+          <!-- Migrations -->
+          <div class="competency-card glass-card reveal delay-2" data-category="migrations" data-skills="aws">
+            <div class="competency-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+            </div>
+            <h3 class="competency-title">Discovery & Migration</h3>
+            <p class="text-secondary">Leading transition assessments, mapping workload configurations and dependencies.</p>
+            <div class="competency-tags">
+              <span class="competency-tag">Azure Migrate / ASR</span>
+              <span class="competency-tag">AWS MGN</span>
+              <span class="competency-tag">Cloudscape Asset Mapping</span>
+              <span class="competency-tag">Transition Governance</span>
+            </div>
+          </div>
+
+          <!-- Support -->
+          <div class="competency-card glass-card reveal delay-3" data-category="migrations" data-skills="ms365">
+            <div class="competency-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+              </svg>
+            </div>
+            <h3 class="competency-title">Support & Change Mgmt</h3>
+            <p class="text-secondary">Maintaining high availability structures and compliant transition controls.</p>
+            <div class="competency-tags">
+              <span class="competency-tag">Microsoft 365 Support</span>
+              <span class="competency-tag">ServiceNow Compliance</span>
+              <span class="competency-tag">Power BI Dashboarding</span>
+              <span class="competency-tag">SLA Governance</span>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   </section>

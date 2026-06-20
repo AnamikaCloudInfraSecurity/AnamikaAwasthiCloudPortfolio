@@ -389,4 +389,33 @@ WORK TIMELINE SUMMARY:
     });
   }
 
+  /* ==========================================
+     10. Tech Axis Skill Hover Interactivity
+     ========================================== */
+  const techAxisNodes = document.querySelectorAll('.tech-axis-node');
+  const competencyCardsList = document.querySelectorAll('.competency-card');
+
+  techAxisNodes.forEach(node => {
+    node.addEventListener('mouseenter', () => {
+      const skill = node.getAttribute('data-skill');
+      
+      // Highlight matching cards and fade out others
+      competencyCardsList.forEach(card => {
+        const cardSkills = card.getAttribute('data-skills') || '';
+        if (cardSkills.split(',').includes(skill)) {
+          card.classList.add('highlighted-skill');
+        } else {
+          card.classList.add('faded-skill');
+        }
+      });
+    });
+
+    node.addEventListener('mouseleave', () => {
+      competencyCardsList.forEach(card => {
+        card.classList.remove('highlighted-skill');
+        card.classList.remove('faded-skill');
+      });
+    });
+  });
+
 });

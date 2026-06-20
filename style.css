@@ -846,6 +846,120 @@ body.light-theme .theme-toggle-btn .moon-icon {
   color: var(--accent-primary);
 }
 
+/* Competencies Layout Grid */
+.competencies-layout {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 3rem;
+  align-items: stretch;
+  margin-top: 2rem;
+}
+
+/* Tech Axis Timeline Container */
+.tech-axis-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 3rem 0;
+  min-height: 500px;
+}
+
+/* Vertical Timeline Line */
+.tech-axis-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background: var(--card-border);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+/* Traveling pulse/laser animation down the line */
+.tech-axis-line-pulse {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--accent-primary), transparent);
+  animation: pulseDown 4s infinite linear;
+}
+
+@keyframes pulseDown {
+  0% { top: -100px; }
+  100% { top: 110%; }
+}
+
+/* Nodes along the timeline */
+.tech-axis-node {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 5;
+  padding: 0.8rem 0;
+  padding-left: 45px;
+  transition: transform var(--transition-fast);
+}
+
+.tech-axis-node:hover {
+  transform: translateX(4px);
+}
+
+/* Glowing dot on the axis */
+.tech-axis-dot {
+  position: absolute;
+  left: 15px; /* Centers the 12px dot on the 20px line (15px + 6px = 21px center) */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--bg-color);
+  border: 2px solid var(--text-muted);
+  transition: all var(--transition-normal);
+}
+
+.tech-axis-node:hover .tech-axis-dot,
+.tech-axis-node.active .tech-axis-dot {
+  border-color: var(--accent-primary);
+  background: var(--accent-primary);
+  box-shadow: 0 0 12px var(--accent-primary), 0 0 4px var(--accent-primary);
+  transform: translateY(-50%) scale(1.3);
+}
+
+/* Label text */
+.tech-axis-label {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  transition: color var(--transition-fast), text-shadow var(--transition-fast);
+  white-space: nowrap;
+}
+
+.tech-axis-node:hover .tech-axis-label,
+.tech-axis-node.active .tech-axis-label {
+  color: var(--text-primary);
+  text-shadow: 0 0 10px rgba(var(--accent-primary-rgb), 0.5);
+}
+
+/* Glowing card class when a skill is active */
+.competency-card.highlighted-skill {
+  border-color: var(--accent-primary);
+  box-shadow: 0 15px 35px var(--shadow-color), 0 0 20px var(--glow-primary);
+  transform: scale(1.02) translateY(-4px);
+}
+
+/* Faded card class when other skills are focused */
+.competency-card.faded-skill {
+  opacity: 0.25;
+  transform: scale(0.98);
+}
+
 .competencies-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1576,6 +1690,17 @@ textarea.form-input {
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .competencies-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  .tech-axis-container {
+    display: none;
   }
 }
 
